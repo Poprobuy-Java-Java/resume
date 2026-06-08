@@ -4,27 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Резюме</title>
+  <title>Имя Фамилия — резюме</title>
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <main class="page">
+  <header class="site-header">
+    <a class="logo" href="#">Петрашин Алексей</a>
+
+    <nav class="nav">
+      <a href="#skills">Навыки</a>
+      <a href="#projects">Проекты</a>
+      <a href="#publications">Публикации</a>
+      <a href="#contacts">Контакты</a>
+      <a href="#experience">Опыт</a>
+    </nav>
+  </header>
+
+  <main>
     <section class="hero">
-      <div>
-        <p class="label">Резюме</p>
-        <h1>Алексей</h1>
-        <h2>Инженер обучения</h2>
+      <div class="hero-content">
+        <p class="eyebrow">IT / Education / Research</p>
 
+        <h1>Создаю образовательные продукты, технические курсы и практические IT-материалы</h1>
 
-        <div class="actions">
-          <a href="#projects">Проекты</a>
-          <a href="#contacts">Контакты</a>
+        <p class="hero-text">
+          Работаю на стыке IT, информационной безопасности, обучения и визуальной упаковки сложных технических тем.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Смотреть проекты</a>
+          <a class="button secondary" href="assets/files/resume.pdf" target="_blank">Скачать резюме</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="photo-container">
+    <img src="src/pic/me.jpg" alt="Фотография">
+</div>
+
+        <div class="quick-info">
+          <span>Linux</span>
+          <span>Docker</span>
+          <span>Moodle</span>
+          <span>Git</span>
+          <span>Research</span>
         </div>
       </div>
     </section>
-  </main>
+    <section class="stats">
+  <div>
+    <strong>40+</strong>
+    <span>глав учебных материалов</span>
+  </div>
+  <div>
+    <strong>10+</strong>
+    <span>проектов и кейсов</span>
+  </div>
+  <div>
+    <strong>5+</strong>
+    <span>публикаций и материалов</span>
+  </div>
+  <div>
+    <strong>3+</strong>
+    <span>направления экспертизы</span>
+  </div>
+</section>
 
+<section class="section" id="experience">
+  <div class="section-head">
+    <p class="eyebrow">Experience</p>
+    <h2>Опыт и направления работы</h2>
+  </div>
+
+  <div class="experience-list" id="experienceList"></div>
+</section>
+
+<section class="section" id="skills">
+  <div class="section-head">
+    <p class="eyebrow">Skills</p>
+    <h2>Ключевые компетенции</h2>
+  </div>
+
+<div class="skill-grid" id="skillsGrid"></div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-head">
+    <p class="eyebrow">Projects</p>
+    <h2>Реализованные проекты</h2>
+  </div>
+
+<div class="project-grid" id="projectsGrid"></div>
+</section>
+
+<section class="section" id="publications">
+  <div class="section-head">
+    <p class="eyebrow">Publications</p>
+    <h2>Публикации и материалы</h2>
+  </div>
+
+<div class="publication-list" id="publicationsList"></div>
+</section>
+
+<section class="section" id="contacts">
+  <div class="section-head">
+    <p class="eyebrow">Contacts</p>
+    <h2>Связаться со мной</h2>
+  </div>
+
+  <div class="contact-row">
+    <a href="mailto:example@mail.ru">Email</a>
+    <a href="https://github.com/username" target="_blank">GitHub</a>
+    <a href="#" target="_blank">Habr</a>
+    <a href="#" target="_blank">Telegram</a>
+  </div>
+</section>
+  </main>
+<script src="script.js"></script>
 </body>
 </html>
