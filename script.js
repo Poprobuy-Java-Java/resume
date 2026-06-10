@@ -7,8 +7,10 @@ const portfolio = {
     "Moodle",
     "HTML/CSS",
     "JavaScript",
-    "Research",
-    "Technical writing"
+    "PostgreSQL",
+    "Kanban",
+    "Cool_guy",
+    "Ye"
   ],
 
 projects: [
@@ -35,35 +37,59 @@ projects: [
   }
 ],
 
-  experience: [
+experience: [
   {
-    period: "2024 — настоящее время",
-    title: "Разработка образовательных программ",
-    description: "Проектирование учебных курсов, практических заданий, интерактивных материалов и методических блоков по IT и информационной безопасности."
+    company: "АО \"НПО \"ЭШЕЛОН\"",
+    period: "13.04.2023 — 07.08.2023",
+    role: "Стажёр / специалист по тестированию",
+    short: "Статическое тестирование по методикам АУ и НДВ, подготовка документации и отчётов.",
+    details: [
+      "Проведение статического анализа и проверки документации в соответствии с заданной методикой.",
+      "Подготовка отчётных материалов по результатам тестирования.",
+      "Работа с требованиями, замечаниями и структурой технической документации."
+    ]
   },
   {
+    company: "ООО \"КРОССТЕХ СОЛЮШНС ГРУПП\"",
     period: "2024 — настоящее время",
-    title: "Практические лаборатории и учебные стенды",
-    description: "Подготовка практико-ориентированных сценариев, лабораторных работ и учебных сред для освоения технических инструментов."
-  },
-  {
-    period: "2025 — настоящее время",
-    title: "Исследовательская и аналитическая работа",
-    description: "Подготовка аналитических материалов, исследовательских текстов, обзоров, визуализаций и структурированных выводов."
+    role: "Специалист по образовательным программам / IT-материалам",
+    short: "Разработка практико-ориентированных сценариев, лабораторных работ и учебных сред.",
+    details: [
+      "Проектирование образовательных программ и практических заданий по IT и информационной безопасности.",
+      "Разработка технических курсов, HTML-материалов, инструкций и визуальных схем.",
+      "Подготовка учебных стендов, сценариев лабораторных работ и материалов для студентов.",
+      "Участие в развитии образовательных проектов, мероприятий и исследовательских материалов."
+    ]
   }
 ],
 
   publications: [
     {
       source: "Habr",
-      title: "Название публикации",
-      link: "#"
+      title: "Подземелья и Команды: как сегодня проводят экзамены в IT",
+      link: "https://habr.com/ru/companies/ctsg/articles/1005594/"
     },
     {
-      source: "Research",
-      title: "Аналитический материал",
-      link: "#"
-    }
+      source: "МИРЭА",
+      title: "Рекрутинговый мастер-класс",
+      link: "https://www.mirea.ru/news/kompaniya-crosstech-solutions-group-i-institut-informatsionnykh-tekhnologiy-proveli-rekrutingovyy-ma/?ysclid=mq6zd0n3kr625827039"
+    },
+    {
+      source: "МИРЭА",
+      title: "Мастер-класс по автоматизированному тестированию",
+      link: "https://www.mirea.ru/news/kompaniya-crosstech-solutions-group-provela-master-klass-po-avtomatizirovannomu-testirovaniyu-v-inst/"
+    },
+     {
+      source: "РГГУ",
+      title: "Профориентационный мастер-класс",
+      link: "https://www.rsuh.ru/news/institut-informatsionnykh-nauk-i-tekhnologiy-bezopasnosti/itogi-proforientatsionnogo-master-klassa-po-osnovam-avtomatizirovannogo-testirovaniya-podveli-v-rggu/?ysclid=mq6zb17jxl582067053"
+    },
+    {
+      source: "VK",
+      title: "Сотрудничество IT Москва",
+      link: "https://vk.com/wall-172223119_7615"
+    },
+
   ]
 };
 
@@ -104,14 +130,117 @@ publicationsList.innerHTML = portfolio.publications
   `)
   .join("");
 
-  experienceList.innerHTML = portfolio.experience
+experienceList.innerHTML = portfolio.experience
   .map(item => `
-    <article class="experience-item">
-      <span>${item.period}</span>
-      <div>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
+    <details class="experience-item">
+      <summary>
+        <div class="experience-main">
+          <span class="experience-period">${item.period}</span>
+
+          <div>
+            <h3>${item.company}</h3>
+            <p class="experience-role">${item.role}</p>
+            <p class="experience-short">${item.short}</p>
+          </div>
+        </div>
+
+        <span class="experience-arrow">↓</span>
+      </summary>
+
+      <div class="experience-details">
+        <strong>Обязанности и результаты</strong>
+
+        <ul>
+          ${item.details.map(detail => `<li>${detail}</li>`).join("")}
+        </ul>
       </div>
-    </article>
+    </details>
   `)
   .join("");
+
+
+  document.querySelectorAll(".experience-item").forEach(item => {
+  const summary = item.querySelector("summary");
+  const content = item.querySelector(".experience-details");
+
+  summary.addEventListener("click", event => {
+    event.preventDefault();
+
+    if (item.classList.contains("is-open")) {
+      content.style.maxHeight = content.scrollHeight + "px";
+
+      requestAnimationFrame(() => {
+        content.style.maxHeight = "0px";
+      });
+
+      item.classList.remove("is-open");
+
+      setTimeout(() => {
+        item.removeAttribute("open");
+      }, 320);
+    } else {
+      item.setAttribute("open", "");
+      item.classList.add("is-open");
+
+      content.style.maxHeight = "0px";
+
+      requestAnimationFrame(() => {
+        content.style.maxHeight = content.scrollHeight + "px";
+      });
+    }
+  });
+});
+
+// Слайдер
+
+const aboutTrack = document.querySelector("#aboutSliderTrack");
+const aboutPrev = document.querySelector("#aboutPrev");
+const aboutNext = document.querySelector("#aboutNext");
+const aboutDots = document.querySelector("#aboutDots");
+
+let aboutSlideIndex = 0;
+
+if (aboutTrack && aboutPrev && aboutNext && aboutDots) {
+  const aboutSlides = Array.from(aboutTrack.querySelectorAll(".about-slide"));
+
+  aboutDots.innerHTML = aboutSlides
+    .map((_, index) => `
+      <button
+        class="about-dot ${index === 0 ? "is-active" : ""}"
+        type="button"
+        aria-label="Слайд ${index + 1}"
+        data-index="${index}">
+      </button>
+    `)
+    .join("");
+
+  const dots = Array.from(aboutDots.querySelectorAll(".about-dot"));
+
+  function updateAboutSlider() {
+    aboutTrack.style.transform = `translateX(-${aboutSlideIndex * 100}%)`;
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("is-active", index === aboutSlideIndex);
+    });
+  }
+
+  aboutNext.addEventListener("click", () => {
+    aboutSlideIndex = (aboutSlideIndex + 1) % aboutSlides.length;
+    updateAboutSlider();
+  });
+
+  aboutPrev.addEventListener("click", () => {
+    aboutSlideIndex = aboutSlideIndex === 0
+      ? aboutSlides.length - 1
+      : aboutSlideIndex - 1;
+
+    updateAboutSlider();
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      aboutSlideIndex = Number(dot.dataset.index);
+      updateAboutSlider();
+    });
+  });
+}

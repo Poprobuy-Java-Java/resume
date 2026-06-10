@@ -6,122 +6,249 @@
 
   <title>Имя Фамилия — резюме</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <header class="site-header">
     <a class="logo" href="#">Петрашин Алексей</a>
-
     <nav class="nav">
+      <a href="#experience">Опыт</a>
       <a href="#skills">Навыки</a>
       <a href="#projects">Проекты</a>
       <a href="#publications">Публикации</a>
       <a href="#contacts">Контакты</a>
-      <a href="#experience">Опыт</a>
     </nav>
   </header>
+  
+  <!-- &nbsp;  -->
 
   <main>
+
+
     <section class="hero">
       <div class="hero-content">
-        <p class="eyebrow">IT / Education / Research</p>
-
-        <h1>Создаю образовательные продукты, технические курсы и практические IT-материалы</h1>
-
+        <!-- <p class="eyebrow">IT / Education / Research</p> -->
+        <p class="eyebrow">EdTech / Информационная безопасность</p>
+        <h1>Технические курсы<br>Хакатоны<br>Мастер-классы<br> Учебный центр</h1>
+        <!-- <h1>Создаю образовательные продукты, технические курсы и практические IT-материалы</h1> -->
         <p class="hero-text">
           Работаю на стыке IT, информационной безопасности, обучения и визуальной упаковки сложных технических тем.
         </p>
-
         <div class="hero-actions">
-          <a class="button primary" href="#projects">Смотреть проекты</a>
-          <a class="button secondary" href="assets/files/resume.pdf" target="_blank">Скачать резюме</a>
+          <a class="button primary" href="assets/files/resume.pdf" target="_blank">
+          Скачать резюме
+          </a>
+          <a class="button secondary" href="#projects">
+          Смотреть проекты
+          </a>
         </div>
       </div>
-
       <div class="hero-card">
         <div class="photo-container">
-    <img src="src/pic/me.jpg" alt="Фотография">
-</div>
-
-        <div class="quick-info">
-          <span>Linux</span>
-          <span>Docker</span>
-          <span>Moodle</span>
-          <span>Git</span>
-          <span>Research</span>
+          <img src="src/pic/me.jpg" alt="Фотография">
         </div>
       </div>
     </section>
+
+
     <section class="stats">
-  <div>
-    <strong>40+</strong>
-    <span>глав учебных материалов</span>
+      <div>
+          <strong>40+</strong>
+          <span>глав учебных материалов</span>
+      </div>
+      <div>
+          <strong>10+</strong>
+          <span>проектов и кейсов</span>
+      </div>
+      <div>
+          <strong>5+</strong>
+          <span>публикаций и материалов</span>
+      </div>
+      <div>
+          <strong>3+</strong>
+          <span>направления экспертизы</span>
+      </div>
+    </section>
+
+
+<!-- <section class="about-me">
+  <div class="about-text">
+    <p class="eyebrow">About me</p>
+    <h2>
+      Превращаю сложные технические темы
+      в понятные и практически применимые знания.
+    </h2>
+    <p>
+      Основная область моей работы — разработка образовательных программ,
+      интерактивных практических заданий и технической документации в сфере
+      информационных технологий и информационной безопасности.
+    </p>
+    <p>
+      Особое внимание уделяю визуальному представлению информации,
+      проектированию пользовательского опыта и созданию материалов,
+      которые позволяют быстро освоить даже сложные технологии.
+    </p>
   </div>
-  <div>
-    <strong>10+</strong>
-    <span>проектов и кейсов</span>
+  <div class="about-quote">
+    <blockquote>
+      «Без теории не бывает практики, без практики — опыта, без опыта — оффера».
+    </blockquote>
   </div>
-  <div>
-    <strong>5+</strong>
-    <span>публикаций и материалов</span>
+</section> -->
+
+<section class="about-me">
+
+  <p class="eyebrow">Обо мне</p>
+
+  <button class="about-slider-btn about-slider-btn-prev" type="button" id="aboutPrev" aria-label="Предыдущий слайд">
+    ←
+  </button>
+
+  <button class="about-slider-btn about-slider-btn-next" type="button" id="aboutNext" aria-label="Следующий слайд">
+    →
+  </button>
+
+
+
+
+
+
+
+
+  <div class="about-slider-window">
+    <div class="about-slider-track" id="aboutSliderTrack">
+
+      <article class="about-slide about-slide-text">
+        <div class="about-text">
+          <h2>
+            Превращаю сложные технические темы
+            в понятные и практически применимые знания.
+          </h2>
+
+          <p>
+            Основная область моей работы — разработка образовательных программ,
+            интерактивных практических заданий и технической документации в сфере
+            информационных технологий и информационной безопасности.
+          </p>
+
+          <p>
+            Особое внимание уделяю визуальному представлению информации,
+            проектированию пользовательского опыта и созданию материалов,
+            которые позволяют быстро освоить даже сложные технологии.
+          </p>
+        </div>
+
+        <div class="about-quote">
+          <blockquote>
+            «Без теории не бывает практики, без практики — опыта, без опыта — оффера».
+          </blockquote>
+        </div>
+      </article>
+
+      <article class="about-slide">
+        <img src="src/pic/about-1.jpg" alt="Фото">
+      </article>
+
+      <article class="about-slide">
+        <img src="src/pic/about-2.jpg" alt="Фото">
+      </article>
+
+      <article class="about-slide">
+        <img src="src/pic/about-3.jpg" alt="Фото">
+      </article>
+
+    </div>
   </div>
-  <div>
-    <strong>3+</strong>
-    <span>направления экспертизы</span>
-  </div>
+
+  <div class="about-dots" id="aboutDots"></div>
+
 </section>
 
+
+
+
+
+<!-- Опыт -->
 <section class="section" id="experience">
   <div class="section-head">
     <p class="eyebrow">Experience</p>
     <h2>Опыт и направления работы</h2>
   </div>
-
   <div class="experience-list" id="experienceList"></div>
 </section>
 
-<section class="section" id="skills">
-  <div class="section-head">
-    <p class="eyebrow">Skills</p>
-    <h2>Ключевые компетенции</h2>
-  </div>
 
-<div class="skill-grid" id="skillsGrid"></div>
-</section>
 
+
+
+
+<!-- Projects -->
 <section class="section" id="projects">
   <div class="section-head">
     <p class="eyebrow">Projects</p>
     <h2>Реализованные проекты</h2>
   </div>
-
 <div class="project-grid" id="projectsGrid"></div>
 </section>
+
+
+<!-- Skills -->
+<section class="section" id="skills">
+  <div class="section-head">
+    <p class="eyebrow">Skills</p>
+    <h2>Ключевые компетенции</h2>
+  </div>
+<div class="skill-grid" id="skillsGrid"></div>
+</section>
+
+
 
 <section class="section" id="publications">
   <div class="section-head">
     <p class="eyebrow">Publications</p>
-    <h2>Публикации и материалы</h2>
+    <h2>Публикации и мероприятия</h2>
   </div>
-
 <div class="publication-list" id="publicationsList"></div>
 </section>
 
-<section class="section" id="contacts">
-  <div class="section-head">
-    <p class="eyebrow">Contacts</p>
-    <h2>Связаться со мной</h2>
-  </div>
 
-  <div class="contact-row">
-    <a href="mailto:example@mail.ru">Email</a>
-    <a href="https://github.com/username" target="_blank">GitHub</a>
-    <a href="#" target="_blank">Habr</a>
-    <a href="#" target="_blank">Telegram</a>
+
+<!-- Footer -->
+<footer class="footer" id="contacts">
+  <div class="footer-top">
+    <div class="footer-about">
+      <h2>Петрашин Алексей</h2>
+      <p>
+        Разработка образовательных программ, технической документации,
+        интерактивных материалов и проектов в области IT и информационной безопасности.
+      </p>
+    </div>
+    <div class="footer-contacts">
+      <div class="footer-item">
+        <span>Телефон</span>
+        <a href="tel:+79778104486">+7 (977) 810-44-86</a>
+      </div>
+      <div class="footer-item">
+        <span>Email</span>
+        <a href="mailto:mail@example.ru">5221628@list.ru</a>
+      </div>
+      <div class="footer-item">
+        <span>Telegram</span>
+        <a href="https://t.me/username" target="_blank">@halikali</a>
+      </div>
+      <div class="footer-item">
+        <span>VK</span>
+        <a href="https://vk.com/id449569898" target="_blank">vk.com</a>
+      </div>
+    </div>
   </div>
-</section>
+</footer>
+
+
   </main>
-<script src="script.js"></script>
+<script src="script.js">
+</script>
+
 </body>
 </html>
