@@ -2,38 +2,60 @@ const portfolio = {
   skills: [
     "Linux",
     "Bash",
-    "Docker",
-    "Git",
-    "Moodle",
-    "HTML/CSS",
-    "JavaScript",
+    "VMware",
     "PostgreSQL",
+    "Git",
+    "Figma",
+    "Tilda",
+    "Adobe Ps",
+    "HTML",
+    "CSS",
+    "JS",
+    "Moodle",
+    "Reezonly",
     "Kanban",
-    "Cool_guy",
-    "Ye"
+    "MindMap",
+    "+"
   ],
 
+ education: [
+  {
+    period: "2026 — 2028",
+    degree: "Магистратура",
+    place: "ФГАОУ ВО «РГГУ",
+    program: "Направление / программа обучения",
+    description: "Кратко: специализация, тема исследования, ключевые дисциплины или фокус обучения."
+  },
+  {
+    period: "2019 — 2023",
+    degree: "Бакалавриат",
+    place: "ФГАОУ ВО «РГГУ»",
+    program: "Факультет информационных систем и безопасности / Комплексная защита объектов информатизации",
+    description: "Кратко: основное направление подготовки, проекты, курсовые или важные учебные результаты."
+  }
+], 
+  
 projects: [
   {
     type: "Курс",
     title: "Практический курс по Linux",
     description: "Учебный курс для начинающих студентов: от базовой работы в терминале до Bash-скриптов и диагностики Linux-сервера.",
-    metrics: ["40+ глав", "практические задания", "Bash"],
-    stack: ["Linux", "Bash", "CLI"]
+    link: "projects/linux.html"
+
   },
   {
     type: "Разработка",
     title: "Кастомная тема Moodle",
     description: "Разработка визуальной структуры страниц Moodle: layout, Mustache-шаблоны, SCSS, оформление главной страницы, авторизации и каталога курсов.",
-    metrics: ["UI", "адаптация", "Moodle"],
-    stack: ["PHP", "Mustache", "SCSS"]
+    link: "projects/linux.html"
+
   },
   {
     type: "Курс",
     title: "Docker и контейнеризация",
     description: "Учебные материалы о контейнерах, окружении приложений, виртуализации, архитектуре контейнера и практическом применении Docker.",
-    metrics: ["Docker", "контейнеры", "практика"],
-    stack: ["Docker", "Linux", "DevOps"]
+    link: "projects/linux.html"
+
   }
 ],
 
@@ -41,18 +63,18 @@ experience: [
   {
     company: "АО \"НПО \"ЭШЕЛОН\"",
     period: "13.04.2023 — 07.08.2023",
-    role: "Стажёр / специалист по тестированию",
+    role: "Специалист департамента сертификации и тестирования",
     short: "Статическое тестирование по методикам АУ и НДВ, подготовка документации и отчётов.",
     details: [
-      "Проведение статического анализа и проверки документации в соответствии с заданной методикой.",
-      "Подготовка отчётных материалов по результатам тестирования.",
-      "Работа с требованиями, замечаниями и структурой технической документации."
+      "Проведение код ревью исходных файлов и сборки продукта.",
+      "Подготовка документация и отчетов по итогам тестирования.",
+      "РУчастие в разработке Моделей угроз."
     ]
   },
   {
     company: "ООО \"КРОССТЕХ СОЛЮШНС ГРУПП\"",
-    period: "2024 — настоящее время",
-    role: "Специалист по образовательным программам / IT-материалам",
+    period: "2023 — настоящее время",
+    role: "Старший специалист группы внешнего обучения и сертификации",
     short: "Разработка практико-ориентированных сценариев, лабораторных работ и учебных сред.",
     details: [
       "Проектирование образовательных программ и практических заданий по IT и информационной безопасности.",
@@ -97,6 +119,7 @@ const skillsGrid = document.querySelector("#skillsGrid");
 const projectsGrid = document.querySelector("#projectsGrid");
 const publicationsList = document.querySelector("#publicationsList");
 const experienceList = document.querySelector("#experienceList");
+const educationTimeline = document.querySelector("#educationTimeline");
 
 skillsGrid.innerHTML = portfolio.skills
   .map(skill => `<article class="skill-card">${skill}</article>`)
@@ -108,19 +131,35 @@ projectsGrid.innerHTML = portfolio.projects
       <span class="project-type">${project.type}</span>
       <h3>${project.title}</h3>
       <p>${project.description}</p>
+      
+      <a class="project-link" href="${project.link}">
+         Подробнее →
+      </a>
+   
 
-      <div class="project-metrics">
-        ${project.metrics.map(metric => `<span>${metric}</span>`).join("")}
-      </div>
+    </article>
+  `)
+  .join("");
 
-      <div class="project-stack">
-        ${project.stack.map(item => `<small>${item}</small>`).join("")}
+
+educationTimeline.innerHTML = portfolio.education
+  .map(item => `
+    <article class="education-item">
+      <div class="education-marker"></div>
+
+      <div class="education-card">
+        <span class="education-period">${item.period}</span>
+        <h3>${item.degree}</h3>
+        <p class="education-place">${item.place}</p>
+        <p class="education-program">${item.program}</p>
+        <p class="education-description">${item.description}</p>
       </div>
     </article>
   `)
   .join("");
 
-publicationsList.innerHTML = portfolio.publications
+
+  publicationsList.innerHTML = portfolio.publications
   .map(publication => `
     <a class="publication-item" href="${publication.link}" target="_blank">
       <span>${publication.source}</span>

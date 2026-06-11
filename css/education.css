@@ -1,0 +1,91 @@
+.education-timeline {
+  position: relative;
+  display: grid;
+  gap: 24px;
+  padding-left: 88px;
+}
+
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    rgba(217, 5, 96, 0.05)
+  );
+}
+
+.education-item {
+  position: relative;
+}
+
+.education-marker {
+  position: absolute;
+  left: -83px;
+  top: 36px;
+  z-index: 2;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+  background: #ffffff;
+  border: 5px solid var(--accent);
+  box-shadow: 0 0 0 8px var(--accent-soft);
+}
+
+.education-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+}
+
+.education-period {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.education-card h3 {
+  margin: 12px 0 0;
+  font-size: 26px;
+  letter-spacing: -0.04em;
+}
+
+.education-place {
+  margin: 10px 0 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.education-program {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.education-description {
+  margin: 14px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 860px) {
+  .education-timeline {
+    padding-left: 58px;
+  }
+
+  .education-marker {
+    left: -53px;
+  }
+
+  .education-card {
+    padding: 24px;
+  }
+}

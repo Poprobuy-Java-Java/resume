@@ -205,3 +205,27 @@
 }
 
 
+/* Тут доп плашки на фото*/
+.about-slide {
+  position: relative;
+}
+
+.about-photo-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  padding: 10px 16px;
+
+  background: rgba(255,255,255,.75);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,.45);
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+/* конец Тут доп плашки на фото*/
+
