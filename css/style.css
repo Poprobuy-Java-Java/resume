@@ -2,6 +2,7 @@
 @import url("./header.css");
 @import url("./hero.css");
 @import url("./about.css");
+@import url("./paralax.css");
 
 :root {
   --bg: #F0F4FA;
@@ -30,7 +31,8 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, Arial, sans-serif;
+  /* font-family: Inter, Arial, sans-serif; */
+  font-family: "Montserrat", Arial, sans-serif;
   color: var(--text);
   background: var(--bg);
 }

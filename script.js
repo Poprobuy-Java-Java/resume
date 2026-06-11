@@ -244,3 +244,51 @@ if (aboutTrack && aboutPrev && aboutNext && aboutDots) {
     });
   });
 }
+
+
+// paralax
+const revealElements = document.querySelectorAll(
+  ".hero, .about-me, .stats, .section, .footer"
+);
+
+revealElements.forEach(element => {
+  element.classList.add("reveal");
+});
+
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+      }
+    });
+  },
+  {
+    threshold: 0.12
+  }
+);
+
+revealElements.forEach(element => {
+  revealObserver.observe(element);
+});
+
+const parallaxElements = document.querySelectorAll(
+  ".hero-card, .project-card"
+);
+
+parallaxElements.forEach(element => {
+  element.classList.add("parallax-soft");
+
+  element.addEventListener("mousemove", event => {
+    const rect = element.getBoundingClientRect();
+
+    const x = (event.clientX - rect.left - rect.width / 2) / 70;
+    const y = (event.clientY - rect.top - rect.height / 2) / 70;
+
+    element.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  element.addEventListener("mouseleave", () => {
+    element.style.transform = "translate(0, 0)";
+  });
+});
