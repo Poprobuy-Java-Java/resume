@@ -37,22 +37,22 @@ const portfolio = {
   
 projects: [
   {
-    type: "Курс",
-    title: "Практический курс по Linux",
-    description: "Учебный курс для начинающих студентов: от базовой работы в терминале до Bash-скриптов и диагностики Linux-сервера.",
-    link: "projects/linux.html"
+    type: "Практика",
+    title: "SQL расследование",
+    description: "Разработал кейс для продуктового хакатона, в котором участникам предстояло расследовать инцидент ИБ. Цепочка цифровых следов, подозрительные события и только один виновный. Один?",
+    link: "pages/crimesql.html"
 
   },
   {
     type: "Разработка",
-    title: "Кастомная тема Moodle",
+    title: "Кастомизация LMS",
     description: "Разработка визуальной структуры страниц Moodle: layout, Mustache-шаблоны, SCSS, оформление главной страницы, авторизации и каталога курсов.",
     link: "projects/linux.html"
 
   },
   {
-    type: "Курс",
-    title: "Docker и контейнеризация",
+    type: "Практика",
+    title: "Подземелья и команды",
     description: "Учебные материалы о контейнерах, окружении приложений, виртуализации, архитектуре контейнера и практическом применении Docker.",
     link: "projects/linux.html"
 
@@ -106,9 +106,14 @@ experience: [
       title: "Профориентационный мастер-класс",
       link: "https://www.rsuh.ru/news/institut-informatsionnykh-nauk-i-tekhnologiy-bezopasnosti/itogi-proforientatsionnogo-master-klassa-po-osnovam-avtomatizirovannogo-testirovaniya-podveli-v-rggu/?ysclid=mq6zb17jxl582067053"
     },
+     {
+      source: "МЭИ",
+      title: "Лекция по информационной безопасности",
+      link: "https://mpei.ru/news/Pages/newsItem.aspx?newsID=4908"
+    },
     {
-      source: "VK",
-      title: "Сотрудничество IT Москва",
+      source: "IT Москва",
+      title: "Практика и стажировки в компании",
       link: "https://vk.com/wall-172223119_7615"
     },
 
@@ -329,5 +334,32 @@ parallaxElements.forEach(element => {
 
   element.addEventListener("mouseleave", () => {
     element.style.transform = "translate(0, 0)";
+  });
+});
+// конец паралакса
+
+// выстрел
+document.querySelectorAll(".skill-card").forEach(card => {
+  card.addEventListener("click", event => {
+    const rect = card.getBoundingClientRect();
+
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const shot = document.createElement("span");
+    shot.className = "shot-mark";
+    shot.style.left = `${x}px`;
+    shot.style.top = `${y}px`;
+
+    card.appendChild(shot);
+
+    card.classList.remove("is-shot");
+    void card.offsetWidth;
+    card.classList.add("is-shot");
+
+    setTimeout(() => {
+      shot.remove();
+      card.classList.remove("is-shot");
+    }, 500);
   });
 });

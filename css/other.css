@@ -4,26 +4,19 @@
     flex-direction: column;
     gap: 14px;
   }
-
-  .nav {
-    flex-wrap: wrap;
+  .nav {flex-wrap: wrap;
   }
-
   main {
     padding-top: 36px;
   }
-
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
   }
-
   .photo-placeholder {
     min-height: 280px;
   }
 }
-
-
 
 .stats div,
 .skill-card,
@@ -35,31 +28,6 @@
 }
 
 
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 10px;
-}
-
-.stats div {
-  padding: 24px;
-}
-
-.stats strong {
-  display: block;
-  color: var(--accent);
-  font-size: 34px;
-  line-height: 1;
-}
-
-.stats span {
-  display: block;
-  margin-top: 10px;
-  color: var(--muted);
-  line-height: 1.5;
-}
 
 .section {
   margin-top: 96px;
@@ -81,29 +49,11 @@
   gap: 18px;
 }
 
-.skill-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
+
 
 .project-grid {
   grid-template-columns: repeat(3, 1fr);
 }
-
-.skill-card {
-  padding: 18px 20px;
-  font-size: 17px;
-  font-weight: 600;
-  text-align: center;
-  border-radius: 14px;
-}
-
-
-
-/* .project-card {
-  position: relative;
-  padding: 82px 34px 34px;
-  overflow: hidden;
-} */
 
 
 .project-card {
@@ -115,21 +65,15 @@
   flex-direction: column;
 }
 
-
-
-
 .project-type {
   position: absolute;
   top: 0;
   right: 28px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-width: 92px;
   height: 42px;
-
   padding: 0 20px;
   background: var(--accent-soft);
   color: var(--accent);
@@ -140,12 +84,6 @@
     0 2px 0 rgba(255,255,255,0.45) inset,
     0 8px 18px rgba(217, 5, 96, 0.08);
 }
-
-
-
-
-
-
 
 .project-card h3 {
   margin: 0;
@@ -208,242 +146,91 @@
   }
 }
 
-.experience-list {
+
+/* Тут для странички SQL */
+
+.sql-intro {
   display: grid;
-  gap: 16px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: stretch;
+  margin-top: 26px;
 }
 
+.sql-intro-text {
+  display: grid;
+  gap: 18px;
+  align-content: center;
+}
 
-.experience-item {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: #ffffff;
+.sql-intro-text p {
+  margin: 0;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.sql-intro-image {
+  min-height: 260px;
+  border-radius: 24px;
   overflow: hidden;
 }
 
-.experience-item summary {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 28px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.experience-item summary::-webkit-details-marker {
-  display: none;
-}
-
-.experience-main {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
-}
-
-.experience-period {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.experience-item h3 {
-  margin: 0;
-  font-size: 24px;
-  letter-spacing: -0.03em;
-}
-
-.experience-role {
-  margin: 8px 0 0;
-  color: var(--text);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.experience-short {
-  margin: 12px 0 0;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.experience-arrow {
-  position: relative;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  border-radius: 16px;
-  background:
-    linear-gradient(135deg, var(--accent), #ff6b9f);
-  box-shadow: 0 12px 26px rgba(217, 5, 96, 0.22);
-  color: transparent;
-  transition:
-    transform 0.32s ease,
-    box-shadow 0.32s ease,
-    border-radius 0.32s ease;
-}
-
-.experience-arrow::before,
-.experience-arrow::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 11px;
-  height: 2px;
-  border-radius: 999px;
-  background: #ffffff;
-  transition: transform 0.32s ease;
-}
-
-.experience-arrow::before {
-  left: 11px;
-  transform: translateY(-50%) rotate(45deg);
-}
-
-.experience-arrow::after {
-  right: 11px;
-  transform: translateY(-50%) rotate(-45deg);
-}
-
-.experience-item.is-open .experience-arrow {
-  transform: rotate(180deg);
-  border-radius: 50%;
-  box-shadow: 0 16px 34px rgba(217, 5, 96, 0.28);
-}
-
-
-
-.experience-details {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 28px 0 calc(220px + 56px);
-  color: var(--muted);
-  transition:
-    max-height 0.32s ease,
-    padding 0.32s ease;
-}
-
-.experience-item.is-open .experience-details {
-  padding-bottom: 28px;
-}
-
-.experience-details strong {
-  color: var(--text);
-}
-
-.experience-details ul {
-  margin: 14px 0 0;
-  padding-left: 18px;
-}
-
-.experience-details li {
-  margin-top: 8px;
-  line-height: 1.7;
-}
-
-
-
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-
-  margin-top: auto;
-  padding-top: 28px;
-
-  color: var(--accent);
-
-  font-size: 15px;
-  font-weight: 600;
-
-  transition: 0.25s ease;
-}
-
-.project-link:hover {
-  transform: translateX(4px);
-  letter-spacing: 0.02em;
-}
-
-
-
-@media (max-width: 860px) {
-  .experience-main {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .experience-details {
-  padding-left: 28px;
-  padding-right: 28px;
- }
-}
-
-.footer {
-  margin-top: 100px;
-  padding: 44px 0 34px;
-  border-top: 1px solid var(--line);
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
-  align-items: start;
-}
-
-.footer-contacts {
-  order: 1;
-  display: grid;
-  gap: 14px;
-}
-
-.footer-about {
-  order: 2;
-  max-width: 520px;
-  justify-self: end;
-}
-
-.footer-about h2 {
-  margin: 0;
-  font-size: 26px;
-  letter-spacing: -0.03em;
-}
-
-.footer-about p {
-  margin: 12px 0 0;
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.7;
-}
-
-
-
-.footer-item span {
+.sql-intro-image img {
+  width: 100%;
+  height: 100%;
   display: block;
-  margin-bottom: 4px;
-  color: var(--text);   /* было var(--accent) */
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  object-fit: cover;
 }
 
-.footer-item a {
-  color: var(--accent); /* было var(--text) */
-  font-size: 16px;
-  font-weight: 600;
+.project-stats {
+  margin-top: 30px;
 }
 
+.project-stats div {
+  padding: 18px 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
 
-.footer-item a:hover {
-  color: var(--accent);
+.project-stats strong {
+  font-size: 32px;
+}
+
+.project-stats span {
+  font-size: 15px;
+}
+
+.sql-legend {
+  max-width: 980px;
+  margin-top: 34px;
+}
+
+.sql-legend h2 {
+  margin: 0 0 14px;
+  font-size: 30px;
+  letter-spacing: -0.03em;
+}
+
+.sql-legend p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 @media (max-width: 860px) {
-  .footer-top {
+  .sql-intro {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
-  .footer-about {
-    justify-self: start;
+  .sql-intro-image {
+    min-height: 220px;
   }
+}
+
+.sql_schema_bd{
+  width: 100%;
+  margin: 50px 0px;
 }

@@ -1,0 +1,91 @@
+.skill-grid {
+  grid-template-columns: repeat(4, 1fr);
+  /* Прицел */
+  cursor: url("../src/cursors/cursor.png") 16 16, pointer;
+}
+
+.skill-card {
+  padding: 18px 20px;
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Выстрел */
+.skill-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card.is-shot {
+  animation: skillShot 0.22s ease;
+}
+
+.shot-mark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.shot-mark::before,
+.shot-mark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  animation: shotPulse 0.45s ease-out forwards;
+}
+
+.shot-mark::after {
+  inset: 5px;
+  background: var(--accent);
+  border: 0;
+  animation: shotDot 0.45s ease-out forwards;
+}
+
+@keyframes skillShot {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(0.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shotPulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+@keyframes shotDot {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+/* конец выстрела */

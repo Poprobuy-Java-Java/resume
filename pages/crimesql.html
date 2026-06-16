@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SQL расследование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="icon" type="image/png" sizes="32x32" href="../src/favicon/favicon-32x32.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#">Петрашин Алексей</a>
+    <nav class="nav">
+      <a href="#education">Образование</a>
+      <a href="#experience">Опыт</a>
+      <a href="#skills">Навыки</a>
+      <a href="#projects">Проекты</a>
+      <a href="#publications">Публикации</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+  
+  <!-- &nbsp;  -->
+
+<main>
+  <section class="project-page">
+    <a class="back-link" href="../index.html#projects">← Назад к проектам</a>
+    <p class="eyebrow">Project case</p>
+    <h1>CRIME SQL</h1>
+  </section>
+
+
+ <section class="sql-intro">
+  <div class="sql-intro-text">
+    <p>
+      Основой задания стала аналитическая база данных <strong>Crime.backup</strong>,
+      в которой участникам предстояло провести расследование инцидента:
+      сопоставить данные, найти взаимосвязи, собрать доказательства и на их
+      основе определить возможного участника атаки.
+    </p>
+
+    <p>
+      Такой формат позволил приблизить работу с базами данных к реальному
+      расследованию: вместо абстрактных запросов студенты анализировали события,
+      проверяли гипотезы и принимали решения на основе найденных цифровых
+      артефактов.
+    </p>
+  </div>
+
+  <div class="sql-intro-image">
+    <img src="../src/pic/crime_bd/crazy_man.png" alt="CRIME SQL">
+  </div>
+</section>
+
+
+<section class="stats project-stats">
+
+  <div>
+    <strong>25+</strong>
+    <span>связанных таблиц</span>
+  </div>
+
+  <div>
+    <strong>1000+</strong>
+    <span>записей в базе</span>
+  </div>
+
+  <div>
+    <strong>20+</strong>
+    <span>SQL-запросов для расследования</span>
+  </div>
+
+  <div>
+    <strong>1</strong>
+    <span>финальный подозреваемый</span>
+  </div>
+
+</section>
+
+
+<section class="sql-legend">
+  <h2>Легенда</h2>
+
+  <p>
+    По легенде, в одной небольшой IT-компании почти каждый день происходят новые
+    происшествия. Одно из них связано с утечкой резервной копии базы данных с
+    облачного сервера компании. 25 марта в промежутке с 08:30 до 10:30 был
+    украден бэкап с информацией о клиентах и партнёрах.
+  </p>
+
+  <p>
+    Участник выступает в роли приглашённого SOC-аналитика. Ему предоставляется
+    аналитическая база данных с информацией об инцидентах, актуальной до 31 марта.
+  </p>
+</section>
+
+<img src="../src/pic/crime_bd/bd_schema.png" class="sql_schema_bd">
+
+
+
+<h2>Алиби</h2>
+
+<img src="../src/pic/crime_bd/alibi_pic.png" class="sql_schema_bd">
+
+</main>
+
+
+
+ 
+<script src="../script.js">
+</script>
+
+</body>
+</html>
