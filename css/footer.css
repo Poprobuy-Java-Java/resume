@@ -1,7 +1,12 @@
+#contacnts {
+   scroll-margin-top: 100px;
+}
+
 .footer {
   margin-top: 100px;
   padding: 44px 0 34px;
   border-top: 1px solid var(--line);
+
 }
 
 .footer-top {

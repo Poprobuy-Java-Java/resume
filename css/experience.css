@@ -1,3 +1,7 @@
+#experience {
+   scroll-margin-top: 100px;
+}
+
 .experience-list {
   display: grid;
   gap: 16px;
@@ -156,4 +160,7 @@
   padding-left: 28px;
   padding-right: 28px;
  }
+}
+.experience-section + .experience-section {
+  margin-top: 26px;
 }

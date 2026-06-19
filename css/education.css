@@ -1,3 +1,7 @@
+#education {
+   scroll-margin-top: 100px;
+}
+
 .education-timeline {
   position: relative;
   display: grid;
@@ -13,11 +17,12 @@
   bottom: 8px;
   width: 2px;
   border-radius: 999px;
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom,
     var(--accent),
     rgba(217, 5, 96, 0.05)
-  );
+  ); */
+  background: #2B2F36;
 }
 
 .education-item {

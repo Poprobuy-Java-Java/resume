@@ -36,10 +36,10 @@ html {
 
 body {
   margin: 0;
-  /* font-family: Inter, Arial, sans-serif; */
   font-family: "Montserrat", Arial, sans-serif;
   color: var(--text);
-  background: var(--bg);
+  /* background: var(--bg); */
+  background-color: #fff;
 }
 
 a {
@@ -59,4 +59,13 @@ h1 {
   font-size: clamp(42px, 6vw, 76px);
   line-height: 0.98;
   letter-spacing: -0.06em;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
