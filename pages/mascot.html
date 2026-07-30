@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SQL расследование</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="icon" type="image/png" sizes="32x32" href="../src/favicon/favicon-32x32.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="../index.html">Петрашин Алексей</a>
+    <!-- <nav class="nav">
+      <a href="#education">Образование</a>
+      <a href="#experience">Опыт</a>
+      <a href="#skills">Навыки</a>
+      <a href="#publications">Публикации</a>
+      <a href="#contacts">Контакты</a>
+    </nav> -->
+  </header>
+  
+  <!-- &nbsp;  -->
+
+<main>
+  <section class="project-page">
+    <a class="back-link" href="../index.html#projects">← Назад к проектам</a>
+  
+    <h1>Знакомьтесь - Эля!</h1>
+  </section>
+
+     <p id="clickMe">
+Для учебных материалов был разработан визуальный маскот — персонаж, который помогает сделать технические курсы более живыми, узнаваемыми и дружелюбными для студентов.
+    </p>
+    <p>Цель — снизить стресс у студентов при прохождении практики, повысить вовлеченность и помочь им легче усваивать сложный материал через совместные ошибки</p>
+
+
+  
+</main>
+
+
+<img id="character" src="animate/frame1.png">
+ 
+
+
+<script src="../script.js">
+</script>
+
+<script>
+const frames = [
+  'animate/frame1.png', // Покой
+  'animate/frame2.png',
+  'animate/frame3.png',
+  'animate/frame4.png',
+  'animate/frame5.png',
+  'animate/frame6.png', // Максимальное действие
+];
+
+const img = document.getElementById('character');
+let currentFrame = 0;
+let isPlaying = false;
+let isForward = true; // true = вперед, false = назад
+
+function playAnimation() {
+  if (isPlaying) return; // Защита от повторного клика во время анимации
+  
+  isPlaying = true;
+  
+  // Определяем направление
+  // Если мы на последнем кадре — играем назад
+  // Если на первом — играем вперед
+  if (currentFrame === frames.length - 1) {
+    isForward = false;
+  } else if (currentFrame === 0) {
+    isForward = true;
+  }
+  
+  function step() {
+    // Показываем текущий кадр
+    img.src = frames[currentFrame];
+    
+    // Двигаемся в нужную сторону
+    if (isForward) {
+      currentFrame++;
+    } else {
+      currentFrame--;
+    }
+    
+    // Проверяем, не дошли ли до конца
+    if (currentFrame === frames.length || currentFrame === -1) {
+      // Если дошли — останавливаемся
+      if (currentFrame === frames.length) {
+        currentFrame = frames.length - 1; // Останавливаемся на последнем
+      } else {
+        currentFrame = 0; // Останавливаемся на первом
+      }
+      img.src = frames[currentFrame];
+      isPlaying = false;
+      return;
+    }
+    
+    // Следующий кадр через 1/12 секунды (~12 fps)
+    setTimeout(step, 1000 / 12);
+  }
+  
+  step();
+}
+
+// Вешаем на клик
+document.getElementById('clickMe').onclick = playAnimation;
+
+</script>
+
+</body>
+</html>

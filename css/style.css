@@ -8,6 +8,7 @@
 @import url("./skills.css");
 @import url("./footer.css");
 @import url("./experience.css");
+@import url("./crime_sql.css");
 
 :root {
   --bg: #F0F4FA;
@@ -15,7 +16,7 @@
   --text: #2b2f36;
   --muted: #525a72;
   --line: #e5e7eb;
-  --accent: #d90560;
+  --accent: #D90560;
   --accent-soft: #fde8f1;
   --blue-soft: #e7f1fd;
 

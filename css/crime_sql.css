@@ -1,0 +1,245 @@
+/* =========================================================
+   Общий заголовок секции проекта
+   ========================================================= */
+
+.crime-section {
+  margin-top: 88px;
+}
+
+.crime-section-head {
+  margin-bottom: 26px;
+}
+
+.crime-section-head h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   Улики
+   ========================================================= */
+
+.evidence-intro {
+  max-width: 1040px;
+}
+
+.evidence-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.evidence-intro p + p {
+  margin-top: 16px;
+}
+
+
+/* Обёртка позволяет прокручивать таблицу на узких экранах */
+
+.evidence-table-wrap {
+  margin-top: 30px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #ffffff;
+}
+
+.evidence-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.evidence-table th,
+.evidence-table td {
+  padding: 20px 22px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.evidence-table th {
+  color: var(--text);
+  background: #f7f9fc;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.evidence-table td {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.evidence-table td:first-child {
+  width: 110px;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.evidence-table td:nth-child(2) {
+  width: 190px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.evidence-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.evidence-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.evidence-table tbody tr:hover {
+  background: rgba(217, 5, 96, 0.035);
+}
+
+.evidence-table code {
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: #eef3f9;
+  color: var(--text);
+  font-family: monospace;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   Итог расследования
+   ========================================================= */
+
+.investigation-result {
+  padding: 46px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: #ffffff;
+}
+
+.investigation-result-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 54px;
+}
+
+.investigation-result-text h2 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.investigation-result-text p:not(.eyebrow) {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.investigation-result-list {
+  padding-left: 30px;
+  border-left: 3px solid var(--accent);
+}
+
+.investigation-result-list h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.investigation-result-list ul {
+  margin: 20px 0 0;
+  padding-left: 20px;
+}
+
+.investigation-result-list li {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+
+/* Финальная плашка */
+
+.case-closed {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 28px;
+  align-items: center;
+  margin-top: 42px;
+  padding: 26px 30px;
+  border-radius: 18px;
+  background: var(--text);
+  color: #ffffff;
+}
+
+.case-closed-label,
+.case-closed-status {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.case-closed-status {
+  text-align: right;
+}
+
+.case-closed-main {
+  text-align: center;
+}
+
+.case-closed-main strong {
+  display: block;
+  color: #ffffff;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1;
+  letter-spacing: 0.06em;
+}
+
+.case-closed-main span {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   Адаптация
+   ========================================================= */
+
+@media (max-width: 860px) {
+  .crime-section {
+    margin-top: 64px;
+  }
+
+  .investigation-result {
+    padding: 32px 26px;
+  }
+
+  .investigation-result-content {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .investigation-result-list {
+    padding-left: 22px;
+  }
+
+  .case-closed {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .case-closed-status {
+    text-align: center;
+  }
+}
